@@ -14,7 +14,7 @@ output = ''
 
 for animal in animals_data:
     name = animal.get('name', 'Unbekannt')
-    locations = animal.get('locations', [])
+    locations = animal.get('locations', [])[0]
     characteristics = animal.get('characteristics', {})
     diet = characteristics.get('diet', 'N/A')
     animal_type = characteristics.get('type', 'N/A')
@@ -26,10 +26,14 @@ for animal in animals_data:
     # print("Type:", animal_type)
     # print()
     output += '<li class="cards__item">'
-    output += f"Name: {name}<br/>"
-    output += f"Diet: {diet}<br/>"
-    output += f"Location: {locations}<br/>"
-    output += f"Type: {animal_type}<br/>"
+    output += f"<div class=\"card__title\">{name}</div>"
+    output += f"<p class =\"card__text\" >"
+    output += f"<strong>Diet:</strong> {diet}<br/>"
+    output += f"<strong>Location:</strong> {locations}<br/>"
+    output += f"<strong>Type:</strong> {animal_type}<br/>"
+
+    output += "</p>"
+
     output += '</li>'
 print(output)
 
