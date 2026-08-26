@@ -25,12 +25,12 @@ for animal in animals_data:
     # print("Location:", locations)
     # print("Type:", animal_type)
     # print()
-
-    output += f"Name: {name}\n"
-    output += f"Diet: {diet}\n"
-    output += f"Location: {locations}\n"
-    output += f"Type: {animal_type}\n\n"
-
+    output += '<li class="cards__item">'
+    output += f"Name: {name}<br/>"
+    output += f"Diet: {diet}<br/>"
+    output += f"Location: {locations}<br/>"
+    output += f"Type: {animal_type}<br/>"
+    output += '</li>'
 print(output)
 
 with open('animals_template.html', 'r') as file:
