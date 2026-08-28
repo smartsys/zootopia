@@ -1,6 +1,5 @@
 import json
 
-
 def load_data(file_path):
     """ Loads a JSON file """
     with open(file_path, "r") as handle:
@@ -8,6 +7,7 @@ def load_data(file_path):
 
 
 def serialize_animal(animal):
+    """ serialize animal output """
     name = animal.get('name', 'Unbekannt')
     locations = animal.get('locations', [])[0]
     characteristics = animal.get('characteristics', {})
